@@ -6,6 +6,28 @@ type NotesProps = {
   params: Promise<{ slug: string[] }>;
 };
 
+export async function generateMetadata({ params }: NotesProps) {
+  const { slug } =  await params;
+  const tag = slug[0]
+  return {
+    title: `${tag} page`,
+    description: `${tag} category on NoteHub`,
+    openGraph: {
+    title: `${tag} page`,
+    description: `${tag} category on NoteHub`,
+    url: ``,
+    images: [
+      {
+        url: "../public/images/notehub-og-meta.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NoteHub",
+      },
+    ],
+  },
+  }  
+}
+
 export default async function Notes({ params }: NotesProps) {
   const { slug } =  await params;
   const tag = slug[0]

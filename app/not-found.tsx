@@ -1,4 +1,24 @@
 import css from "@/app/page.module.css"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Not Found Page",
+  description: "This page does not exist",
+  openGraph: {
+    title: "Not Found",
+    description: "This page does not exist",
+    url: ``,
+    images: [
+      {
+        url: "../public/images/notehub-og-meta.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NoteHub",
+      },
+    ],
+  },
+};
+
 export default function NotFound() {
     return (
 <>

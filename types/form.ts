@@ -1,6 +1,7 @@
+import { NoteTag } from "./note";
 
-export interface InitialFormValues{
+export interface    FormValues{
     title: string,
     content: string,
-    tag:string,
+    tag:NoteTag,
 }
