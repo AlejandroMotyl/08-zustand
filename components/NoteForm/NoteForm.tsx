@@ -9,7 +9,6 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useNoteStore } from '@/lib/noteStore';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 
 const FormSchema = Yup.object().shape({
     title: Yup.string()

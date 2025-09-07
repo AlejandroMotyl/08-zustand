@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: `https://08-zustand-two-lake.vercel.app/`,
     images: [
       {
-        url: "/public/images/notehub-og-meta.jpg",
+        url: "/images/notehub-og-meta.jpg",
         width: 1200,
         height: 630,
         alt: "NoteHub",
