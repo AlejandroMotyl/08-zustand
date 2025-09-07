@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     url: `https://08-zustand-two-lake.vercel.app/not-found`,
     images: [
       {
-        url: "/images/notehub-og-meta.jpg",
+        url:"https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
         width: 1200,
         height: 630,
         alt: "NoteHub",

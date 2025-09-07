@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: NotesProps) {
     url: `https://08-zustand-two-lake.vercel.app/notes/filter/${tag}`,
     images: [
       {
-        url: "/images/notehub-og-meta.jpg",
+        url:"https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
         width: 1200,
         height: 630,
         alt: "NoteHub",
