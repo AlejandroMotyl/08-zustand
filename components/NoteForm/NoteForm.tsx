@@ -66,7 +66,7 @@ export default function NoteForm() {
     onSuccess: () => {
         queryClient.invalidateQueries({ queryKey: ['notes'] });
         clearDraft()
-        router.push("/notes/filter/All")
+        router.back()
     },
     onError: () => {} }
     )
@@ -116,9 +116,9 @@ return (
             </div>
 
             <div className={css.actions}>
-                <Link href={"/notes/filter/All"} className={css.cancelButton}>
+                <button type='button' onClick={() => router.back()} className={css.cancelButton}>
                     Cancel
-                </Link>
+                </button>
                 <button
                     type="submit"
                     className={css.submitButton}

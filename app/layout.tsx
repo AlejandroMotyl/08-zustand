@@ -18,10 +18,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NoteHub",
     description: "App for managing your notes",
-    url: ``,
+    url: `https://08-zustand-two-lake.vercel.app/`,
     images: [
       {
-        url: "../public/images/notehub-og-meta.jpg",
+        url: "/public/images/notehub-og-meta.jpg",
         width: 1200,
         height: 630,
         alt: "NoteHub",

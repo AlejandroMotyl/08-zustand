@@ -15,10 +15,10 @@ export async function generateMetadata({ params }: NotesProps) {
     openGraph: {
     title: `${tag} page`,
     description: `${tag} category on NoteHub`,
-    url: ``,
+    url: `https://08-zustand-two-lake.vercel.app/notes/filter/${tag}`,
     images: [
       {
-        url: "../public/images/notehub-og-meta.jpg",
+        url: "/public/images/notehub-og-meta.jpg",
         width: 1200,
         height: 630,
         alt: "NoteHub",
