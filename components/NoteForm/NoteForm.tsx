@@ -6,7 +6,7 @@ import type { FormValues } from '../../types/form';
 import { createNote} from '@/lib/api';
 import { useMutation } from '@tanstack/react-query';
 import { useQueryClient } from '@tanstack/react-query';
-import { useNoteStore } from '@/lib/noteStore';
+import { useNoteStore } from '@/lib/store/noteStore';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
