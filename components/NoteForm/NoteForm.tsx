@@ -26,7 +26,6 @@ const FormSchema = Yup.object().shape({
 export default function NoteForm() {
     const queryClient = useQueryClient();
     const { draft, setDraft, clearDraft } = useNoteStore();
-    const [isValid, setValid] = useState(true);
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
     const router = useRouter();
     
@@ -34,11 +33,9 @@ export default function NoteForm() {
         try {
             await FormSchema.validate(values, { abortEarly: false })
             setErrors({})
-            setValid(true)
             return true;
         } catch (error) {
             if (error instanceof Yup.ValidationError) {
-          setValid(false)
         const formattedErrors: { [key: string]: string } = {};
         error.inner.forEach((e) => {
           if (e.path) formattedErrors[e.path] = e.message;
@@ -85,14 +82,14 @@ return (
         <form className={css.form} action={onSubmit}>
             <div className={css.formGroup}>
                 <label htmlFor="title">Title</label>
-            <input id="title" type="text" name="title" className={css.input} defaultValue={draft?.title} onChange={handleChange} />
+            <input id="title" type="text" name="title" className={css.input} value={draft?.title} onChange={handleChange} />
             {errors.title && <div className={css.error}>{errors.title}</div>}
             </div>
 
             <div className={css.formGroup}>
                 <label htmlFor="content">Content</label>
                     <textarea
-                    defaultValue={draft?.content}
+                    value={draft?.content}
                     id="content"
                     name="content"
                     rows={8}
@@ -104,7 +101,7 @@ return (
 
             <div className={css.formGroup}>
                 <label htmlFor="tag">Tag</label>
-                <select id="tag" name="tag" className={css.select} defaultValue={draft?.tag} onChange={handleChange}>
+                <select id="tag" name="tag" className={css.select} value={draft?.tag} onChange={handleChange}>
                     <option value="Todo">Todo</option>
                     <option value="Work">Work</option>
                     <option value="Personal">Personal</option>
@@ -121,7 +118,6 @@ return (
                 <button
                     type="submit"
                     className={css.submitButton}
-                    disabled={!isValid}
                 >
                     Create note
                 </button>
